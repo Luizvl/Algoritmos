@@ -1,0 +1,198 @@
+CRITICAL - 2023-10-16 03:22:17 --> syntax error, unexpected token "<"
+in APPPATH\Views\Articles\index.php on line 11.
+ 1 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 2 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('Articles/index', [], true)
+ 3 APPPATH\Controllers\Articles.php(14): view('Articles/index', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Articles->index()
+ 5 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Articles))
+ 6 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-10-16 03:25:23 --> Undefined variable $article
+in APPPATH\Views\Articles\index.php on line 9.
+ 1 APPPATH\Views\Articles\index.php(9): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $article', 'C:\\xampp\\htdocs\\ciapp\\app\\Views\\Articles\\index.php', 9)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\ciapp\\app\\Views\\Articles\\index.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('Articles/index', [], true)
+ 5 APPPATH\Controllers\Articles.php(14): view('Articles/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Articles->index()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Articles))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-10-16 03:43:37 --> syntax error, unexpected variable "$data"
+in APPPATH\Controllers\Articles.php on line 14.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(285): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\ciapp\\app\\Controllers\\Articles.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(263): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\Articles')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\Articles')
+ 4 SYSTEMPATH\CodeIgniter.php(877): class_exists('\\App\\Controllers\\Articles', true)
+ 5 SYSTEMPATH\CodeIgniter.php(481): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-10-16 03:44:15 --> Error connecting to the database: mysqli_sql_exception: Access denied for user 'ciappuser'@'localhost' (using password: YES) in C:\xampp\htdocs\ciapp\system\Database\MySQLi\Connection.php:184
+Stack trace:
+#0 C:\xampp\htdocs\ciapp\system\Database\MySQLi\Connection.php(184): mysqli->real_connect('localhost', 'ciappuser', Object(SensitiveParameterValue), 'ciapp', 3306, '', 0)
+#1 C:\xampp\htdocs\ciapp\system\Database\BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\xampp\htdocs\ciapp\system\Database\BaseConnection.php(574): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\xampp\htdocs\ciapp\system\Database\BaseConnection.php(1409): CodeIgniter\Database\BaseConnection->query('SHOW TABLES FRO...')
+#4 C:\xampp\htdocs\ciapp\app\Controllers\Articles.php(11): CodeIgniter\Database\BaseConnection->listTables()
+#5 C:\xampp\htdocs\ciapp\system\CodeIgniter.php(919): App\Controllers\Articles->index()
+#6 C:\xampp\htdocs\ciapp\system\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Articles))
+#7 C:\xampp\htdocs\ciapp\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\ciapp\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#9 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Access denied for user '****'@'localhost' (using password: YES) in C:\xampp\htdocs\ciapp\system\Database\MySQLi\Connection.php:229
+Stack trace:
+#0 C:\xampp\htdocs\ciapp\system\Database\BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\xampp\htdocs\ciapp\system\Database\BaseConnection.php(574): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\xampp\htdocs\ciapp\system\Database\BaseConnection.php(1409): CodeIgniter\Database\BaseConnection->query('SHOW TABLES FRO...')
+#3 C:\xampp\htdocs\ciapp\app\Controllers\Articles.php(11): CodeIgniter\Database\BaseConnection->listTables()
+#4 C:\xampp\htdocs\ciapp\system\CodeIgniter.php(919): App\Controllers\Articles->index()
+#5 C:\xampp\htdocs\ciapp\system\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Articles))
+#6 C:\xampp\htdocs\ciapp\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\ciapp\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2023-10-16 03:44:15 --> Unable to connect to the database.
+Main connection [MySQLi]: Access denied for user '****'@'localhost' (using password: YES)
+in SYSTEMPATH\Database\BaseConnection.php on line 427.
+ 1 SYSTEMPATH\Database\BaseConnection.php(574): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseConnection.php(1409): CodeIgniter\Database\BaseConnection->query('SHOW TABLES FROM `ciapp`')
+ 3 APPPATH\Controllers\Articles.php(11): CodeIgniter\Database\BaseConnection->listTables()
+ 4 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Articles->index()
+ 5 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Articles))
+ 6 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-10-16 03:44:18 --> Error connecting to the database: mysqli_sql_exception: Access denied for user 'ciappuser'@'localhost' (using password: YES) in C:\xampp\htdocs\ciapp\system\Database\MySQLi\Connection.php:184
+Stack trace:
+#0 C:\xampp\htdocs\ciapp\system\Database\MySQLi\Connection.php(184): mysqli->real_connect('localhost', 'ciappuser', Object(SensitiveParameterValue), 'ciapp', 3306, '', 0)
+#1 C:\xampp\htdocs\ciapp\system\Database\BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\xampp\htdocs\ciapp\system\Database\BaseConnection.php(574): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\xampp\htdocs\ciapp\system\Database\BaseConnection.php(1409): CodeIgniter\Database\BaseConnection->query('SHOW TABLES FRO...')
+#4 C:\xampp\htdocs\ciapp\app\Controllers\Articles.php(11): CodeIgniter\Database\BaseConnection->listTables()
+#5 C:\xampp\htdocs\ciapp\system\CodeIgniter.php(919): App\Controllers\Articles->index()
+#6 C:\xampp\htdocs\ciapp\system\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Articles))
+#7 C:\xampp\htdocs\ciapp\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\ciapp\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#9 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Access denied for user '****'@'localhost' (using password: YES) in C:\xampp\htdocs\ciapp\system\Database\MySQLi\Connection.php:229
+Stack trace:
+#0 C:\xampp\htdocs\ciapp\system\Database\BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\xampp\htdocs\ciapp\system\Database\BaseConnection.php(574): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\xampp\htdocs\ciapp\system\Database\BaseConnection.php(1409): CodeIgniter\Database\BaseConnection->query('SHOW TABLES FRO...')
+#3 C:\xampp\htdocs\ciapp\app\Controllers\Articles.php(11): CodeIgniter\Database\BaseConnection->listTables()
+#4 C:\xampp\htdocs\ciapp\system\CodeIgniter.php(919): App\Controllers\Articles->index()
+#5 C:\xampp\htdocs\ciapp\system\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Articles))
+#6 C:\xampp\htdocs\ciapp\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\ciapp\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2023-10-16 03:44:18 --> Unable to connect to the database.
+Main connection [MySQLi]: Access denied for user '****'@'localhost' (using password: YES)
+in SYSTEMPATH\Database\BaseConnection.php on line 427.
+ 1 SYSTEMPATH\Database\BaseConnection.php(574): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseConnection.php(1409): CodeIgniter\Database\BaseConnection->query('SHOW TABLES FROM `ciapp`')
+ 3 APPPATH\Controllers\Articles.php(11): CodeIgniter\Database\BaseConnection->listTables()
+ 4 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Articles->index()
+ 5 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Articles))
+ 6 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-10-16 03:44:25 --> Error connecting to the database: mysqli_sql_exception: Access denied for user 'ciappuser'@'localhost' (using password: YES) in C:\xampp\htdocs\ciapp\system\Database\MySQLi\Connection.php:184
+Stack trace:
+#0 C:\xampp\htdocs\ciapp\system\Database\MySQLi\Connection.php(184): mysqli->real_connect('localhost', 'ciappuser', Object(SensitiveParameterValue), 'ciapp', 3306, '', 0)
+#1 C:\xampp\htdocs\ciapp\system\Database\BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\xampp\htdocs\ciapp\system\Database\BaseConnection.php(574): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\xampp\htdocs\ciapp\system\Database\BaseConnection.php(1409): CodeIgniter\Database\BaseConnection->query('SHOW TABLES FRO...')
+#4 C:\xampp\htdocs\ciapp\app\Controllers\Articles.php(11): CodeIgniter\Database\BaseConnection->listTables()
+#5 C:\xampp\htdocs\ciapp\system\CodeIgniter.php(919): App\Controllers\Articles->index()
+#6 C:\xampp\htdocs\ciapp\system\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Articles))
+#7 C:\xampp\htdocs\ciapp\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\ciapp\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#9 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Access denied for user '****'@'localhost' (using password: YES) in C:\xampp\htdocs\ciapp\system\Database\MySQLi\Connection.php:229
+Stack trace:
+#0 C:\xampp\htdocs\ciapp\system\Database\BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\xampp\htdocs\ciapp\system\Database\BaseConnection.php(574): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\xampp\htdocs\ciapp\system\Database\BaseConnection.php(1409): CodeIgniter\Database\BaseConnection->query('SHOW TABLES FRO...')
+#3 C:\xampp\htdocs\ciapp\app\Controllers\Articles.php(11): CodeIgniter\Database\BaseConnection->listTables()
+#4 C:\xampp\htdocs\ciapp\system\CodeIgniter.php(919): App\Controllers\Articles->index()
+#5 C:\xampp\htdocs\ciapp\system\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Articles))
+#6 C:\xampp\htdocs\ciapp\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\ciapp\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2023-10-16 03:44:25 --> Unable to connect to the database.
+Main connection [MySQLi]: Access denied for user '****'@'localhost' (using password: YES)
+in SYSTEMPATH\Database\BaseConnection.php on line 427.
+ 1 SYSTEMPATH\Database\BaseConnection.php(574): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseConnection.php(1409): CodeIgniter\Database\BaseConnection->query('SHOW TABLES FROM `ciapp`')
+ 3 APPPATH\Controllers\Articles.php(11): CodeIgniter\Database\BaseConnection->listTables()
+ 4 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Articles->index()
+ 5 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Articles))
+ 6 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-10-16 04:18:42 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'NOT NULL,
+	`content` TEXT NULL,
+	CONSTRAINT `pk_article` PRIMARY KEY(`id`)
+) ...' at line 3 in C:\xampp\htdocs\ciapp\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\xampp\htdocs\ciapp\system\Database\MySQLi\Connection.php(306): mysqli->query('CREATE TABLE `a...', 0)
+#1 C:\xampp\htdocs\ciapp\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('CREATE TABLE `a...')
+#2 C:\xampp\htdocs\ciapp\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('CREATE TABLE `a...')
+#3 C:\xampp\htdocs\ciapp\system\Database\Forge.php(546): CodeIgniter\Database\BaseConnection->query('CREATE TABLE `a...')
+#4 C:\xampp\htdocs\ciapp\app\Database\Migrations\2023-10-16-035318_CreateArticleTable.php(30): CodeIgniter\Database\Forge->createTable('article')
+#5 C:\xampp\htdocs\ciapp\system\Database\MigrationRunner.php(877): App\Database\Migrations\CreateArticleTable->up()
+#6 C:\xampp\htdocs\ciapp\system\Database\MigrationRunner.php(188): CodeIgniter\Database\MigrationRunner->migrate('up', Object(stdClass))
+#7 C:\xampp\htdocs\ciapp\system\Commands\Database\Migrate.php(84): CodeIgniter\Database\MigrationRunner->latest(NULL)
+#8 C:\xampp\htdocs\ciapp\system\CLI\Commands.php(65): CodeIgniter\Commands\Database\Migrate->run(Array)
+#9 C:\xampp\htdocs\ciapp\system\CLI\Console.php(37): CodeIgniter\CLI\Commands->run('migrate', Array)
+#10 C:\xampp\htdocs\ciapp\spark(102): CodeIgniter\CLI\Console->run()
+#11 {main}
+ERROR - 2023-10-16 04:21:17 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'NOT NULL,
+	`content` TEXT NULL,
+	CONSTRAINT `pk_article` PRIMARY KEY(`id`)
+) ...' at line 3 in C:\xampp\htdocs\ciapp\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\xampp\htdocs\ciapp\system\Database\MySQLi\Connection.php(306): mysqli->query('CREATE TABLE `a...', 0)
+#1 C:\xampp\htdocs\ciapp\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('CREATE TABLE `a...')
+#2 C:\xampp\htdocs\ciapp\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('CREATE TABLE `a...')
+#3 C:\xampp\htdocs\ciapp\system\Database\Forge.php(546): CodeIgniter\Database\BaseConnection->query('CREATE TABLE `a...')
+#4 C:\xampp\htdocs\ciapp\app\Database\Migrations\2023-10-16-035318_CreateArticleTable.php(30): CodeIgniter\Database\Forge->createTable('article')
+#5 C:\xampp\htdocs\ciapp\system\Database\MigrationRunner.php(877): App\Database\Migrations\CreateArticleTable->up()
+#6 C:\xampp\htdocs\ciapp\system\Database\MigrationRunner.php(188): CodeIgniter\Database\MigrationRunner->migrate('up', Object(stdClass))
+#7 C:\xampp\htdocs\ciapp\system\Commands\Database\Migrate.php(84): CodeIgniter\Database\MigrationRunner->latest(NULL)
+#8 C:\xampp\htdocs\ciapp\system\CLI\Commands.php(65): CodeIgniter\Commands\Database\Migrate->run(Array)
+#9 C:\xampp\htdocs\ciapp\system\CLI\Console.php(37): CodeIgniter\CLI\Commands->run('migrate', Array)
+#10 C:\xampp\htdocs\ciapp\spark(102): CodeIgniter\CLI\Console->run()
+#11 {main}
+CRITICAL - 2023-10-16 05:13:49 --> syntax error, unexpected token "return"
+in APPPATH\Controllers\Articles.php on line 17.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(285): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\ciapp\\app\\Controllers\\Articles.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(263): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\Articles')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\Articles')
+ 4 SYSTEMPATH\CodeIgniter.php(877): class_exists('\\App\\Controllers\\Articles', true)
+ 5 SYSTEMPATH\CodeIgniter.php(481): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-10-16 05:18:56 --> Class "App\Models\ArticleModel" not found
+in APPPATH\Controllers\Articles.php on line 15.
+ 1 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Articles->index()
+ 2 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Articles))
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-10-16 05:18:58 --> Class "App\Models\ArticleModel" not found
+in APPPATH\Controllers\Articles.php on line 15.
+ 1 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Articles->index()
+ 2 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Articles))
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-10-16 05:23:00 --> Class "App\Models\ArticleModel" not found
+in APPPATH\Controllers\Articles.php on line 11.
+ 1 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Articles->index()
+ 2 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Articles))
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-10-16 05:23:02 --> Class "App\Models\ArticleModel" not found
+in APPPATH\Controllers\Articles.php on line 11.
+ 1 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Articles->index()
+ 2 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Articles))
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
